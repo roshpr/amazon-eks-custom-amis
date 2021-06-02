@@ -1,8 +1,8 @@
 
 PACKER_VARIABLES := binary_bucket_name binary_bucket_region eks_version eks_build_date cni_plugin_version root_volume_size data_volume_size hardening_flag http_proxy https_proxy no_proxy
-VPC_ID := vpc-0e8cf1ce122b1b059
-SUBNET_ID := subnet-0eddf1d7d0f9f9772
-AWS_REGION := us-east-2
+VPC_ID := ${vpc_id}
+SUBNET_ID := ${subnet_id}
+AWS_REGION := ${aws_region}
 PACKER_FILE := 
 
 EKS_BUILD_DATE := 2020-11-02
@@ -70,6 +70,10 @@ build-ubuntu2004-1.18:
 
 build-ubuntu2004-1.19:
 	$(MAKE) build PACKER_FILE=amazon-eks-node-ubuntu2004.json eks_version=$(EKS_119_VERSION) eks_build_date=2021-01-05
+
+build-arm-ubuntu2004-1.19:
+	$(MAKE) build PACKER_FILE=amazon-eks-node-arm-ubuntu2004.json eks_version=$(EKS_119_VERSION) eks_build_date=2021-01-05
+
 
 # RHEL 7
 #-----------------------------------------------------

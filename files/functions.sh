@@ -260,8 +260,9 @@ install_openscap() {
 #   None
 ################################################################
 install_jq() {
-    curl -sL -o /usr/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
-    chmod +x /usr/bin/jq
+#    curl -sL -o /usr/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
+#    chmod +x /usr/bin/jq
+    apt-get install -y jq
 }
 
 ################################################################

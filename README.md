@@ -1,4 +1,12 @@
 # Amazon EKS Sample Custom AMIs
+This repo is forked aws-samples/amazon-eks-custom-amis repo. This repo adds support for Graviton instance types with ubuntu. A new target build-arm-ubuntu2004-1.19 and packer config amazon-eks-node-arm-ubuntu2004.json is added.
+
+In order to run the build update your VPC configs in bash script build_arm64_ubuntu.sh and run the script.
+
+Changes made:
+* New target build-arm-ubuntu2004-1.19
+* New packer config amazon-eks-node-arm-ubuntu2004.json
+* New custom cnr script scripts/cnr/install_cnr_binaries.sh 
 
 This repository contains [Packer](https://packer.io/) scripts and definitions to create custom AMIs for use with [Amazon EKS via self-managed Auto Scaling Groups](https://docs.aws.amazon.com/eks/latest/userguide/worker.html) and [Managed Node Groups](https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html).  Many organizations require running custom AMIs for security, compliance, or internal policy requirements. **The Amazon EKS Optimized AMI remains the preferred way to deploy containers on Amazon EKS, these AMIs aim to provide a starting place for customers looking to implement custom AMIs with operating systems other than Amazon Linux.** The AMIs built in this repository are based on the [Amazon EKS optimized AMI published by AWS](https://github.com/awslabs/amazon-eks-ami).
 

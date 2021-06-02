@@ -1,0 +1,36 @@
+export aws_region="us-east-2"
+#export    ami_name= null
+#export    "ami_groups"= ""
+#export    "kms_key_id"= ""
+
+#export    binary_bucket_name="amazon-eks"
+#export    binary_bucket_region="us-east-2"
+#export    kubernetes_version="1.19"
+#export    kubernetes_build_date="latest"
+#export    docker_version=19.03
+#export    cni_version="v0.6.0"
+#export    cni_plugin_version="v0.7.5"
+#export    pull_cni_from_github="true"
+
+#export    source_ami_owners="099720109477"
+#export    source_ami_filter_name="ubuntu/images/hvm-ssd/ubuntu-focal-20.04-*"
+#export    arch="arm64"
+#export    instance_type="t4g.medium"
+#export    ami_description="EKS Kubernetes Worker AMI with Ubuntu 20.04 image"
+
+export    security_group_id="sg-0ad9f4c181a08933f"
+#export    ssh_interface=""
+#export    ssh_username="ubuntu"
+export    vpc_id="vpc-681eb903"
+export    subnet_id="subnet-7ecd0315"
+#export    source_ami_id="ami-0b0c8ae527978b689"
+#export    remote_folder= ""
+#export    launch_block_device_mappings_volume_size="10"
+#export    ami_users=""
+#export    aadditional_apt_repos= ""
+#export    "aws_access_key" = ""
+#export    "aws_secret_key" = ""
+#export    "aws_token" = ""
+ # AMI ARM = "ami-0b0c8ae527978b689"
+echo "##### Triggering build on VPC $vpc_id"
+make build-arm-ubuntu2004-1.19
